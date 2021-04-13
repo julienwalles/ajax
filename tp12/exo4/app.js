@@ -10,4 +10,4 @@ xhr.onreadystatechange = function() {
 xhr.send(JSON.stringify({message:'comment ca va ?'}));
 }
 
-// ab51ed6f-b638-42a9-969e-7ae3567323fc
+// ab51ed6f-b638-42a9-969e-7ae3567323fc clé API
