@@ -1,23 +1,22 @@
 function loadDoc() {
-    var textSaisi = document.getElementById("motCle").value;
+  var textSaisi = document.getElementById("motCle").value;
 
-   var xhttp = new XMLHttpRequest();
-  
-   xhttp.onreadystatechange = function () {
+  var xhttp = new XMLHttpRequest();
 
-       if (this.readyState === 4) {
+  xhttp.onreadystatechange = function () {
 
-              var x = document.createElement('img');
-            //   let az = JSON.parse(this.responseText);
-              x.src = this.responseText.image;
-              console.log(this.responseText);
-                 
-              var divRight = document.getElementById("exo3");
-            
-               divRight.appendChild(x) ;          
-       }
-   };
+    if (this.readyState === 4) {
 
-   xhttp.open("GET","https://api.giphy.com/v1/gifs/search?api_key=iw7w8WcJlavlM6s4vd1wLEjgxsUKDMea&q="+textSaisi+"=25&offset=0&rating=g&lang=en", true);
-   xhttp.send();
+      var divRight = document.getElementById("exo3");
+
+      let az = JSON.parse(this.responseText);
+      for (i = 0; i < az.data.length; i++) {
+        var x = document.createElement('img');
+        x.src = az.data[i].images["480w_still"].url;
+        divRight.appendChild(x);
+      }
+    }
+  };
+  xhttp.open("GET", "https://api.giphy.com/v1/gifs/search?api_key=iw7w8WcJlavlM6s4vd1wLEjgxsUKDMea&q=" + textSaisi + "&offset=0&rating=g&lang=en", true);
+  xhttp.send();
 }
