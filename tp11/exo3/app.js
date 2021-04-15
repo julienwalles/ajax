@@ -17,6 +17,7 @@ function loadDoc() {
       }
     }
   };
-  xhttp.open("GET", "https://api.giphy.com/v1/gifs/search?api_key=iw7w8WcJlavlM6s4vd1wLEjgxsUKDMea&q=" + textSaisi + "&offset=0&rating=g&lang=en", true);
+  xhttp.open("GET", "https://api.giphy.com/v1/gifs/search?api_key=iw7w8WcJlavlM6s4vd1wLEjgxsUKDMea&q=" + textSaisi + 
+  "&offset=0&rating=g&lang=en", true);
   xhttp.send();
 }
